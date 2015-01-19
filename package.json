@@ -1,0 +1,21 @@
+{
+  "name": "he-angular-tabs",
+  "version": "0.0.0",
+  "description": "Pearson Higher Ed components: Tab component for AngularJS (proof-of-concept)",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aarmour/he-angular-tabs.git"
+  },
+  "keywords": [
+    "pearson"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aarmour/he-angular-tabs/issues"
+  },
+  "homepage": "https://github.com/aarmour/he-angular-tabs"
+}
