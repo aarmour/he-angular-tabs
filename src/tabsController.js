@@ -2,55 +2,10 @@
 
 module.exports = TabsController;
 
-function TabsController($scope, $element, $timeout) {
-
-  function Iterator() {
-    this._items = [];
-  }
-
-  Iterator.prototype = {
-
-    contains: function (item) {
-      return item && (this.indexOf(item) > -1);
-    },
-
-    add: function (item, index) {
-      if (!item) return -1;
-
-      if (!angular.isNumber(index)) {
-        index = this._items.length;
-      }
-
-      this._items.splice(index, 0, item);
-
-      return this.indexOf(item);
-    },
-
-    remove: function (item) {
-      if (this.contains(item)) {
-        this._items.splice(indexOf(item), 1);
-      }
-    },
-
-    count: function () {
-      return this._items.length;
-    },
-
-    inRange: function (index) {
-      return this._items.length && (index > -1) && (index < this._items.length);
-    },
-
-    indexOf: function (item) {
-      return this._items.indexOf(item);
-    },
-
-    itemAt: function (index) {
-      return this.inRange(index) ? this._items[index] : null;
-    }
-  }
+function TabsController($scope, $element, $timeout, $heUtil) {
 
   var self = this;
-  var tabsList = new Iterator();
+  var tabsList = $heUtil.iterator();
 
   self.$element = $element;
   self.scope = $scope;

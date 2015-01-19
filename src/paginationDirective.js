@@ -2,7 +2,7 @@
 
 module.exports = TabPaginationDirective;
 
-function TabPaginationDirective($window, $$rAF, $$q, $timeout, $sniffer) {
+function TabPaginationDirective($window, $$rAF, $$q, $timeout, $sniffer, $heUtil) {
 
   // Must match (2 * width of paginators) in scss
   var PAGINATORS_WIDTH = (8 * 4) * 2;
@@ -67,11 +67,11 @@ function TabPaginationDirective($window, $$rAF, $$q, $timeout, $sniffer) {
       var pageIndex = getPageForTab(tab);
 
       if (!state.active || pageIndex === state.page) {
-        tab.element[0].focus();
+        $heUtil.focusElement(tab.element);
       } else {
         // Go to the new page, wait for the page transition to end, then focus.
-        oldTab && oldTab.element[0].blur();
-        setPage(pageIndex).then(function() { tab.element[0].focus(); });
+        oldTab && $heUtil.blurElement(oldTab.element);
+        setPage(pageIndex).then(function() { $heUtil.focusElement(tab.element) });
       }
     }
 

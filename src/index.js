@@ -1,6 +1,6 @@
 'use strict';
 
-var tabs = angular.module('highered.components.tabs', [])
+var tabs = angular.module('highered.components.tabs', [require('he-core').angular.name])
   .controller('$heTabs', require('./tabsController'))
   .directive('heTabs', require('./tabsDirective'))
   .controller('$heTab', require('./tabController'))
